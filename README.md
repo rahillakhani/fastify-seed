@@ -1,2 +1,5 @@
-# fastify-seed
-seed proj for fastify on node with typescript
+## Install the dependencies `npm install`
+
+## Open 2 terminal
+    - In First one run `npm run tsc-watch`
+    - In Second run `npm run dev`
