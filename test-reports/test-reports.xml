@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="2.643">
+  <testsuite name="/health" errors="0" failures="0" skipped="0" timestamp="2021-12-09T19:50:57" time="1.322" tests="2">
+    <testcase classname="/health should return 200" name="/health should return 200" time="0.157">
+    </testcase>
+    <testcase classname="/health should return 404" name="/health should return 404" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="/event" errors="0" failures="0" skipped="0" timestamp="2021-12-09T19:50:58" time="0.266" tests="1">
+    <testcase classname="/event POST should return 200" name="/event POST should return 200" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="/health" errors="0" failures="0" skipped="0" timestamp="2021-12-09T19:50:59" time="0.275" tests="2">
+    <testcase classname="/health should return 200" name="/health should return 200" time="0.06">
+    </testcase>
+    <testcase classname="/health should return 404" name="/health should return 404" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>

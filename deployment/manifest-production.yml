@@ -1,0 +1,18 @@
+applications:
+  - name: cicct-triton-event-api-production
+    command: node dist/server.js
+    routes:
+      - route: ${name}.us-east-1.paas.lmig.com
+    buildpack: nodejs_edge
+    instances: 2
+    memory: 1024M
+    timeout: 180
+    env:
+      APP_ENV: ${forge.deployment.key}
+      APPD_CDN_BASE_URL: https://repo.forge.lmig.com/npm/
+      NODE_ENV: production
+      TARGET_ENV: PROD
+      TWILIO_ACCOUNT_SID: ${secret.twilio.accountSid}
+      TWILIO_AUTH_TOKEN: ${secret.twilio.authToken}
+    blue-green:
+      health-check-endpoint: /health

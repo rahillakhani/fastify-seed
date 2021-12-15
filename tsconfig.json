@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "ES2019",
+  },
+  "exclude": [
+    "bamboo-specs",
+    "coverage",
+    "node_modules",
+    "test/**/*"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

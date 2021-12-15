@@ -1,0 +1,20 @@
+applications:
+  - name: cicct-triton-event-api-test
+    command: node dist/server.js
+    routes:
+      - route: ${name}.us-east-1.np.paas.lmig.com
+    buildpack: nodejs_edge
+    instances: 1
+    memory: 512M
+    timeout: 180
+    env:
+      APP_ENV: ${forge.deployment.key}
+      APPD_CDN_BASE_URL: https://repo.forge.lmig.com/npm/
+      NODE_ENV: production
+      TARGET_ENV: TEST
+      TWILIO_ACCOUNT_SID: ${secret.twilio.accountSid}
+      TWILIO_AUTH_TOKEN: ${secret.twilio.authToken}
+    blue-green:
+      health-check-endpoint: /health
+    services:
+      - everyday-curfew

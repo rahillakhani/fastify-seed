@@ -1,18 +1,62 @@
 {
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "esm": "^3.2.25",
-    "fastify": "^3.24.0",
-    "fastify-swagger": "^4.12.6"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "name": "fastify-seed",
+  "name": "cicct-auth-proxy",
   "version": "1.0.0",
-  "main": "server.js",
+  "private": true,
+  "description": "Proxies requests to and from various services to handle different authentication methods",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "gulp && tsc",
+    "start": "npm run build && node ./dist/server.js",
+    "start:dev": "nodemon ./src/server.ts",
+    "test": "jest --config=jest.config.js",
+    "test:coverage": "jest --config=jest.config.js --coverage"
+  },
+  "engines": {
+    "node": "14",
+    "npm": "6"
+  },
+  "dependencies": {
+    "@lmig/cct-shared-logging-lib": "^2.2.0",
+    "@lmig/express-idp-oauth-token": "^1.2.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.24.1",
+    "fastify-cors": "^6.0.2",
+    "fastify-plugin": "^3.0.0",
+    "http-proxy-middleware": "^1.3.0",
+    "kafkajs": "^1.15.0",
+    "pino-pretty": "^7.2.0",
+    "proxyquire": "^2.1.3",
+    "twilio-flex-token-validator": "^1.5.6",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/cors": "^2.8.10",
+    "@types/express-winston": "^4.0.0",
+    "@types/http-proxy-middleware": "^1.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/supertest": "^2.0.11",
+    "@types/winston": "^2.4.4",
+    "babel-jest": "^26.6.3",
+    "cross-env": "^7.0.2",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.1.3",
+    "typescript": "^4.2.4"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-reports",
+    "outputName": "test-reports.xml"
+  }
 }

@@ -1,0 +1,20 @@
+---
+topic-management:
+    version: V1
+    requests:
+        - topicName: BusEvt_Triton_Call_Started_Dev
+          description: A liberty mutual representative has started a call with a customer
+          topicConfiguration:
+            partitionCount: 9
+          principal:
+            distinguishedName: CN=triton-event-api.lmig.com,OU=GRM US,O=Liberty Mutual Group,L=Portsmouth,ST=New Hampshire,C=US
+            operation:
+              - read
+              - write
+          # children:
+          #   - artifactGuid: <placeholder>
+          #     distinguishedName: CN=triton-event-api.lmig.com,OU=GRM US,O=Liberty Mutual Group,L=Portsmouth,ST=New Hampshire,C=US
+          #     operation:
+          #       - read
+          c3Access:
+            - gci-cct-triton-dev-tritonadmin
